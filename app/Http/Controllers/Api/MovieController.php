@@ -36,7 +36,8 @@ class MovieController extends Controller
         } else {
             return response()->json([
                 'success' => false,
-                'error' => 'nessun film con questo id'
+                'error' => 'nessun film trovato con questo id',
+                'data' => []
             ]);
         }
 
