@@ -21,4 +21,6 @@ Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('home');
 
-Route::get('/admin/account', 'HomeController@account');
+Route::get('/admin/account', 'HomeController@account')->name('admin.account');
+Route::post('/admin/generate_token', 'HomeController@generateToken')->name('admin.generate_token');
+//questa rotta non è navigabile da browser
