@@ -12,6 +12,11 @@ class MovieController extends Controller
 
     public function index() {
         $movies = Movie::all();
-        return response()->json(['data' => $movies]);
+        return response()->json([
+            'success' => true,
+            'count' => $movies->count(),
+            'data' => $movies
+        ]);
+        //$movie è una collection di oggetti movie
     }
 }
