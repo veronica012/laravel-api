@@ -15,3 +15,4 @@ use Illuminate\Support\Facades\Route;
 */
 //questo controller non restituisce una view ma un json che troviamo in Api\MovieController nella funzione index
 Route::get('/movies', 'Api\MovieController@index' );
+Route::get('/movies/bestmovies', 'Api\MovieController@bestmovies' );

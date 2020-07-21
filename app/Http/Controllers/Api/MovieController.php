@@ -19,4 +19,9 @@ class MovieController extends Controller
         ]);
         //$movie è una collection di oggetti movie
     }
+
+    public function bestmovies() {
+        $movies = Movie::where('voto', '>', 3)->orderBy('voto', 'desc')->get();
+        return response()->json($movies);
+    }
 }
