@@ -17,7 +17,7 @@
             @else
                 <form action="{{route('admin.generate_token')}}" method="post">
                     @csrf
-                    <input type="submit" name="" value="Genera API token">
+                    <input class="btn btn-primary" type="submit" name="" value="Genera API token">
                 </form>
             @endif
             </p>
