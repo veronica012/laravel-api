@@ -19,7 +19,13 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/movies/{movie}', 'Api\MovieController@show');
 
 //in post non sono navigabili
-Route::post('/movies', 'Api\MovieController@index' );
-Route::post('/movies/bestmovies', 'Api\MovieController@bestmovies' );
-Route::post('/movies/{movie}', 'Api\MovieController@show');
+// Route::post('/movies', 'Api\MovieController@index' );
+// Route::post('/movies/bestmovies', 'Api\MovieController@bestmovies' );
+// Route::post('/movies/{movie}', 'Api\MovieController@show');
 //con il middlewere si possono proteggere le api
+
+Route::middleware('api_check')->namespace('Api')->group(function(){
+    Route::post('/movies', 'Api\MovieController@index' );
+    Route::post('/movies/bestmovies', 'MovieController@bestmovies' );
+    Route::post('/movies/{movie}', 'MovieController@show');
+});
