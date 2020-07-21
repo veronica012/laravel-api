@@ -24,4 +24,21 @@ class MovieController extends Controller
         $movies = Movie::where('voto', '>', 3)->orderBy('voto', 'desc')->get();
         return response()->json($movies);
     }
+
+//il parametro dell'url {movie} viene passato alla funzione show (è l'id)
+    public function show($id) {
+        $movie = Movie::find($id);
+        if($movie) {
+            return response()->json([
+                'success' => true,
+                'data' => $movie
+            ]);
+        } else {
+            return response()->json([
+                'success' => false,
+                'error' => 'nessun film con questo id'
+            ]);
+        }
+
+    }
 }
