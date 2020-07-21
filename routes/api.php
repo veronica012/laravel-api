@@ -14,7 +14,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //questo controller non restituisce una view ma un json che troviamo in Api\MovieController nella funzione index
-Route::get('/movies', 'Api\MovieController@index' );
-Route::get('/movies/bestmovies', 'Api\MovieController@bestmovies' );
-Route::get('/movies/{movie}', 'Api\MovieController@show');
+// Route::get('/movies', 'Api\MovieController@index' );
+// Route::get('/movies/bestmovies', 'Api\MovieController@bestmovies' );
+// Route::get('/movies/{movie}', 'Api\MovieController@show');
+
 //in post non sono navigabili
+Route::post('/movies', 'Api\MovieController@index' );
+Route::post('/movies/bestmovies', 'Api\MovieController@bestmovies' );
+Route::post('/movies/{movie}', 'Api\MovieController@show');
+//con il middlewere si possono proteggere le api
