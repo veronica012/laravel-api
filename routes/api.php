@@ -25,7 +25,7 @@ use Illuminate\Support\Facades\Route;
 //con il middlewere si possono proteggere le api
 
 Route::middleware('api_check')->namespace('Api')->group(function(){
-    Route::post('/movies', 'Api\MovieController@index' );
+    Route::post('/movies', 'MovieController@index' );
     Route::post('/movies/bestmovies', 'MovieController@bestmovies' );
     Route::post('/movies/{movie}', 'MovieController@show');
 });
