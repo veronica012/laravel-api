@@ -8,6 +8,19 @@
             <p>
                 <strong>Username: </strong> {{Auth::user()->name}}
             </p>
+            <p>
+                <strong>Email: </strong> {{Auth::user()->email}}
+            </p>
+            <p>
+                @if(Auth::user()->api_token)
+                <strong>Api Token: </strong> {{Auth::user()->api_token}}
+            @else
+                <form action="{{route('admin.generate_token')}}" method="post">
+                    @csrf
+                    <input type="submit" name="" value="Genera API token">
+                </form>
+            @endif
+            </p>
         </div>
     </div>
 </div>
